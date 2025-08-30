@@ -1,0 +1,4 @@
+# Airbnb Clone Entity Relationship Diagram
+
+## Description
+The Entity Relationship Diagram (ERD) for the Airbnb Clone project visually represents the structure and relationships among key entities, including User, Property, Booking, Payment, Review, and Message, as defined by the schema. It illustrates primary and foreign key connections—such as `host_id` linking User to Property, and `property_id` and `user_id` tying Booking to their respective tables—along with constraints like uniqueness on `email` and rating limits (1-5) for Reviews. This diagram provides a clear blueprint for the database design, ensuring efficient data management and integrity.

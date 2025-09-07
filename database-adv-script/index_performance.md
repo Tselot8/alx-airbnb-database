@@ -13,6 +13,33 @@ Performance was measured and validated using `EXPLAIN ANALYZE`.
 
 ---
 
+Queries:
+-- Measure Users by email
+EXPLAIN ANALYZE
+SELECT *
+FROM Users
+WHERE email = 'alice@example.com';
+
+-- Measure Property by location
+EXPLAIN ANALYZE
+SELECT *
+FROM Property
+WHERE location = 'New York';
+
+-- Measure Booking by user_id + property_id
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE user_id = 'u1' AND property_id = 'p1';
+
+-- Measure Booking by total_price
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE total_price > 500;
+
+---
+
 ## What the Code Does
 1. **Users Table**
    - Index: `idx_user_email`  

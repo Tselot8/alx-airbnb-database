@@ -1,4 +1,4 @@
--- Users table
+-- User table
 CREATE TABLE Users (
     user_id UUID PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_users_email ON Users(email);
+CREATE INDEX idx_user_email ON Users(email);
 
 -- Property table
 CREATE TABLE Property (

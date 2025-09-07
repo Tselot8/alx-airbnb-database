@@ -26,9 +26,10 @@ FROM Booking b
 JOIN Users u ON b.user_id = u.user_id
 JOIN Property p ON b.property_id = p.property_id
 LEFT JOIN Payment pay ON pay.booking_id = b.booking_id
-WHERE b.total_price > 500;  -- Added WHERE clause
+WHERE b.total_price > 500
+  AND b.status = 'confirmed';  -- Added AND condition
 
--- After refactoring with filter
+-- After refactoring with indexes and filter
 CREATE INDEX idx_booking_user_id ON Booking(user_id);
 CREATE INDEX idx_booking_property_id ON Booking(property_id);
 CREATE INDEX idx_payment_booking_id ON Payment(booking_id);
@@ -54,4 +55,5 @@ FROM Booking b
 INNER JOIN Users u ON u.user_id = b.user_id
 INNER JOIN Property p ON p.property_id = b.property_id
 LEFT JOIN Payment pay ON pay.booking_id = b.booking_id
-WHERE b.total_price > 500;  -- Added WHERE clause
+WHERE b.total_price > 500
+  AND b.status = 'confirmed';  -- Added AND condition
